@@ -13,7 +13,7 @@ $munten=array (
 );
 
 $bedrag = doubleval($argv[1]);
-$restBedrag = round($bedrag, 2, PHP_ROUND_HALF_UP);
+$restBedrag = $bedrag;
 
 foreach($munten as $munt => $hoeveelMunt) {
     $muntFix = doubleval($munt);
@@ -27,6 +27,6 @@ foreach($munten as $munt=>$hoeveelMunt) {
     $muntFix = doubleval($munt);
     if($hoeveelMunt >= 1) {
         $tussen=explode(" ", $munt);
-        echo($muntFix." ".$tussen[1]." x ".$hoeveelMunt.PHP_EOL);
+        echo(round($muntFix)." ".$tussen[1]." x ".$hoeveelMunt.PHP_EOL);
     }
 }
